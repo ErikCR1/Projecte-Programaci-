@@ -118,20 +118,34 @@ nav a:hover::after {
   padding: 4rem 10%;
   gap: 4 rem;
 }
+
+.hero-instruccions {
+  min-height: 80vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  background: 
+    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
+    url("../img/hero.jpg") center / cover;
+  display: flex;
+  align-items: center;
+  padding: 2rem 10%;
+}
+
 .hero-content {
     flex: 1;
     max-width: 850px;
 }
 
 .hero-radar {
-  flex-shrink: 0;              /* Evita que el radar se haga pequeño */
+  flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero div {
-  max-width: 800px;
+  max-width: 900px;
   animation: fadeUp 1.2s ease-out;
   text-align: left;
 }
@@ -147,7 +161,7 @@ nav a:hover::after {
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 /* ---------- SECCIONES GENERALES ---------- */
