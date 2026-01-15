@@ -22,12 +22,12 @@ def login():
     password = input("Introduce su contraseña: ")
 
     buscar = "SELECT password FROM usuari WHERE username = %s"
-    cursor.execute(buscar, (nom_usuari,))
+    cursor.execute(buscar, (user,))
     resultado = cursor.fetchone()
 
     if resultado:
-        if resultado[0] == contrasenya:
-            print(f"S'ha iniciat sessió correctament. Benvingut de nou, {nom_usuari}!")
+        if resultado[0] == password:
+            print(f"S'ha iniciat sessió correctament. Benvingut de nou, {user}!")
             return True
         else:
             print("Error: La contrasenya és incorrecta per a aquest usuari.")
@@ -36,9 +36,9 @@ def login():
         print("L'usuari no existeix. Registrant nou usuari...")
         query_insert = "INSERT INTO usuari (username, password) VALUES (%s, %s)"
         try:
-            cursor.execute(query_insert, (nom_usuari, contrasenya))
+            cursor.execute(query_insert, (user, password))
             conexion.commit() 
-            print(f"Usuari '{nom_usuari}' creat amb èxit. Ja pots començar!")
+            print(f"Usuari '{user}' creat amb èxit. Ja pots començar!")
             return True
         except Exception as e:
             print(f"Error al registre: {e}")
