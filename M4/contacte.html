@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto | Nom del Joc</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<!-- ---------- HEADER ---------- -->
+<header>
+  <h1>Nom del Joc</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="instrucciones.html">Instrucciones</a>
+    <a href="historia.html">Historia</a>
+    <a href="contacte.html">Contacto</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<!-- ---------- TITULO ---------- -->
+<section>
+  <div class="section-box">
+    <h2>Contacto</h2>
+    <p>
+      ¿Tienes dudas, sugerencias o quieres colaborar con nosotros?
+      Ponte en contacto a través de los siguientes medios.
+    </p>
+  </div>
+</section>
+
+<!-- ---------- INFORMACIÓN DE CONTACTO ---------- -->
+<section class="cards">
+
+  <div class="card">
+    <span class="material-icons">location_on</span>
+    <h3>Dirección</h3>
+    <p>Carrer de Balmes, 16<br>08007 Barcelona</p>
+  </div>
+
+  <div class="card">
+    <span class="material-icons">call</span>
+    <h3>Teléfono</h3>
+    <p>
+      <a href="tel:+34931234567" style="color:var(--accent); text-decoration:none;">
+        +34 931 23 45 67
+      </a>
+    </p>
+  </div>
+
+  <div class="card">
+    <span class="material-icons">email</span>
+    <h3>Email</h3>
+    <p>contacto@nomdeljoc.com</p>
+  </div>
+
+</section>
+
+<!-- ---------- MAPA ---------- -->
+<section>
+  <div class="section-box">
+    <h2>¿Dónde estamos?</h2>
+
+    <iframe
+      src="https://www.google.com/maps?q=Barcelona&output=embed"
+      width="100%"
+      height="350"
+      style="border-radius:15px; border:0;">
+    </iframe>
+  </div>
+</section>
+
+<!-- ---------- FORMULARIO ---------- -->
+<section>
+  <div class="section-box">
+    <h2>Formulario de contacto</h2>
+
+    <form>
+
+      <input
+        type="text"
+        placeholder="Nombre"
+        required
+        pattern="[A-Za-zÀ-ÿ\s]{3,}"
+        title="Introduce un nombre válido (mínimo 3 letras)">
+
+      <input
+        type="tel"
+        placeholder="Teléfono"
+        required
+        pattern="[0-9]{9}"
+        title="Introduce un teléfono de 9 dígitos">
+
+      <input
+        type="email"
+        placeholder="Correo electrónico"
+        required>
+
+      <textarea
+        rows="4"
+        placeholder="Escribe tu mensaje"
+        required
+        pattern=".{10,}"
+        title="El mensaje debe tener al menos 10 caracteres"></textarea>
+
+      <input type="submit" value="Enviar solicitud"
+        style="
+          background: var(--accent);
+          color: #fff;
+          font-weight: 700;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          padding: 0.8rem;
+        ">
+    </form>
+
+  </div>
+</section>
+
+<!-- ---------- FOOTER ---------- -->
+<footer>
+  <p>© 2026 Nom del Joc</p>
+  <div class="social-icons">
+    <span class="material-icons">public</span>
+    <span class="material-icons">photo_camera</span>
+    <span class="material-icons">thumb_up</span>
+    <span class="material-icons">music_note</span>
+  </div>
+</footer>
+
+</body>
+</html>
