@@ -15,7 +15,7 @@ def conectar():
 def login():
     conexion = conectar()
 
-    cursor = conexion.cursor
+    cursor = conexion.cursor()
 
     print("-----LOGIN / REGISTRO--------")
     user = input("Introduce tu nombre de usuario: ")
