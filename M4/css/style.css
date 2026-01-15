@@ -35,6 +35,13 @@ hr {
   opacity: 1;    /* Asegura que se vea con la opacidad del rgba */
 }
 
+/* ---------- LOGO -------------- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 /* ---------- TIPOGRAFIA ---------- */
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
@@ -72,7 +79,10 @@ header {
 
 header h1 {
   font-size: 1.5rem;
+  margin: 0;
+  color: white;
   font-weight: 900;
+  letter-spacing: 0,5px;
 }
 
 header img {
@@ -104,6 +114,12 @@ nav a:hover::after {
   width: 100%;
 }
 
+.nav-logo-icon {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
 /* ---------- HERO ---------- */
 .hero {
   min-height: 80vh;
@@ -119,7 +135,46 @@ nav a:hover::after {
   gap: 4 rem;
 }
 
-.hero-instruccions {
+.hero-instructions {
+  min-height: 80vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  background: 
+    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
+    url("../img/hero.jpg") center / cover;
+  display: flex;
+  align-items: center;
+  padding: 2rem 10%;
+}
+
+.hero-history {
+  min-height: 80vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  background: 
+    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
+    url("../img/hero.jpg") center / cover;
+  display: flex;
+  align-items: center;
+  padding: 2rem 10%;
+}
+
+.hero-contact {
+  min-height: 80vh;
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  background: 
+    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
+    url("../img/hero.jpg") center / cover;
+  display: flex;
+  align-items: center;
+  padding: 2rem 10%;
+}
+
+.hero-about {
   min-height: 80vh;
   padding: 0 10%;
   display: flex;
