@@ -13,16 +13,17 @@
   <div class="logo-container">
     <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
     <h1>Misión final</h1>
+  </div>
   <nav>
     <a href="index.html">Inicio</a>
     <a href="instruccions.html">Instrucciones</a>
     <a href="historia.html">Historia</a>
     <a href="contacte.html">Contacto</a>
-    <a href="about.html">About</a>
+    <a href="aboutus.html">About</a>
   </nav>
 </header>
 
-<section class="hero hero-about">
+<section class="hero">
   <div class="hero-content">
     <h2>Sobre nosotros</h2>
     <p>
@@ -32,43 +33,44 @@
   </div>
 </section>
 
-<section>
-  <h2>Equipo de desarrollo</h2>
+<section class="cards">
+  <div class="card">
+    <span class="material-icons">person</span>
+    <h3>Ariadna</h3>
+    <p>Diseño narrativo y dirección artística.</p>
+  </div>
 
-  <div class="cards">
-    <div class="card">
-      <span class="material-icons">person</span>
-      <h3>Ariadna</h3>
-      <p>Diseño narrativo y dirección artística.</p>
-    </div>
+  <div class="card">
+    <span class="material-icons">person</span>
+    <h3>Erik</h3>
+    <p>Programación y sistemas del juego.</p>
+  </div>
 
-    <div class="card">
-      <span class="material-icons">person</span>
-      <h3>Erik</h3>
-      <p>Programación y sistemas del juego.</p>
-    </div>
-
-    <div class="card">
-      <span class="material-icons">person</span>
-      <h3>Fabian</h3>
-      <p>Diseño de niveles y experiencia de usuario.</p>
-    </div>
+  <div class="card">
+    <span class="material-icons">person</span>
+    <h3>Fabian</h3>
+    <p>Diseño de niveles y experiencia de usuario.</p>
   </div>
 </section>
+
+<hr>
 
 <section>
   <div class="section-box">
     <h2>Tráiler del juego</h2>
-    <p>
+    <p style="margin-bottom: 1.5rem;">
       Aquí podrás ver el anuncio promocional oficial del juego.
     </p>
 
-    <!-- VIDEO YOUTUBE (lo pondrás tú) -->
-    <iframe
-      width="100%"
-      height="400"
-      style="border-radius:15px; border:0;">
-    </iframe>
+    <div style="width: 100%; aspect-ratio: 16/9;">
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/TU_ID_AQUI"
+        style="border-radius:15px; border:0;"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 </section>
 

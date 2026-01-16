@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
-  <title>Historia | Misión final</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Història | Misión final</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,72 +14,85 @@
   <div class="logo-container">
     <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
     <h1>Misión final</h1>
+  </div>
   <nav>
-    <a href="index.html">Inicio</a>
-    <a href="instruccions.html">Instrucciones</a>
-    <a href="historia.html">Historia</a>
-    <a href="contacte.html">Contacto</a>
+    <a href="index.html">Inici</a>
+    <a href="instruccions.html">Instruccions</a>
+    <a href="historia.html" class="active">Història</a>
+    <a href="usuari.html">Usuari</a>
+    <a href="contacte.html">Contacte</a>
     <a href="about.html">About</a>
   </nav>
 </header>
 
-<section class="hero hero-history">
-  <div class="hero-content">
-    <h2>La historia</h2>
-    <p>En un mundo moldeado por las sombras del conflicto y el peso de las verdades ocultas, cada elección cuenta. Un investigador obsesivo y un ex soldado de élite son lo único que se interpone entre el orden y el caos absoluto. Tus decisiones marcarán el rumbo; tu camino definirá el futuro.
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>Personajes principales</h2>
-
-  <div style="
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-  ">
-
-    <div class="card" style="min-width:250px;">
-      <img src="img/personatge1.png" style="width:40%; border-radius:10px;">
-      <h3>Eustakio</h3>
-      <p>Es un hombre de tez morena y cabello oscuro, cuya apariencia pulcra denota una mente extremadamente organizada. Viste de manera formal y clásica, destacando su chaleco y corbata, lo que refleja su respeto por el rigor académico y la estructura. Su mirada es analítica y serena; ha pasado su vida sumergido en archivos históricos, registros digitales y escenas del crimen que otros ya han dado por perdidas. Como investigador de carrera, Eustakio no busca la confrontación física, sino la verdad oculta en los detalles que nadie más nota. Su oficio es el de un "arquitecto de pruebas": su paciencia es infinita y su capacidad para conectar datos aislados lo convierte en el cerebro estratégico detrás de cada resolución. </p>
-    </div>
-
-    <div class="card" style="min-width:250px;">
-      <img src="img/personatge2.png" style="width:40%; border-radius:10px;">
-      <h3>Manuel</h3>
-      <p>De complexión robusta y cabello rubio, Manuel proyecta una energía mucho más pragmática y directa. Su vestimenta es funcional y relajada, propia de alguien que ha cambiado el uniforme militar por una vida de acción en las calles. Tras años de servicio como soldado, su transición al mundo de la investigación a tiempo completo no fue por falta de fuerza, sino por un deseo de justicia más personal y directa. Posee una cicatriz invisible de disciplina y vigilancia; sus ojos claros siempre están escaneando el entorno en busca de amenazas o inconsistencias. Su oficio actual combina la táctica de campo con el instinto criminalista, siendo el encargado de obtener respuestas allí donde la diplomacia falla y donde se requiere un temple de hierro para enfrentar el peligro.</p>
-    </div>
-
-  </div>
-</section>
-<hr>
-<section>
-  <div class="cards">
-
-    <div class="card">
-      <img src="img/foto1.jpg" style="width:100%; border-radius:10px;">
-      <h3>El inicio</h3>
+<main>
+  <section class="hero hero-history">
+    <div class="hero-content">
+      <h2>El pes de les decisions</h2>
       <p>
-        Todo comienza con una decisión aparentemente insignificante.
+        En un món motllurat per les ombres del conflicte i el pes de les veritats ocultes, cada elecció compta. Un investigador obsessiu i un ex-soldat d'elit són l'únic que s'interposa entre l'ordre i el caos absolut. 
       </p>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="img/foto2.jpg" style="width:100%; border-radius:10px;">
-      <h3>El conflicto</h3>
-      <p>
-        Las consecuencias empiezan a afectar al mundo y a sus personajes.
-      </p>
+  <hr>
+
+  <section class="characters-section">
+    <h2 class="section-title">Protagonistes del Conflicte</h2>
+    <div class="character-carousel">
+      
+      <div class="character-card">
+        <div class="char-img-container">
+          <img src="img/personatge1.png" alt="Eustakio">
+        </div>
+        <div class="char-info">
+          <h3>Eustakio <span class="char-role">L'Arquitecte de Proves</span></h3>
+          <p>Darrere la seva aparença polida s'amaga una ment analítica serena. Investigador de carrera, Eustakio no busca la confrontació física, sinó la veritat oculta en els detalls que ningú més nota. La seva paciència és infinita.</p>
+        </div>
+      </div>
+
+      <div class="character-card">
+        <div class="char-img-container">
+          <img src="img/personatge2.png" alt="Manuel">
+        </div>
+        <div class="char-info">
+          <h3>Manuel <span class="char-role">L'Instint de Ferro</span></h3>
+          <p>Ex-soldat de complexió robusta. Manuel projecta una energia pragmàtica i directa. El seu ofici actual combina la tàctica de camp amb l'instint criminalista, sent l'encarregat d'obtenir respostes on la diplomàcia falla.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="story-chapters">
+    <div class="chapter">
+      <div class="chapter-text">
+        <span class="chapter-number">01</span>
+        <h3>L'Inici del Col·lapse</h3>
+        <p>Tot comença amb una decisió aparentment insignificant. Una trucada no contestada, un document filtrat... les petites esquerdes en el sistema comencen a obrir-se mentre Eustakio detecta una anomalia en els registres oficials de l'organització.</p>
+      </div>
+      <div class="chapter-img">
+        <img src="img/foto1.jpg" alt="El Inicio">
+      </div>
     </div>
 
-  </div>
-</section>
+    <div class="chapter reverse">
+      <div class="chapter-text">
+        <span class="chapter-number">02</span>
+        <h3>L'Escalada del Conflicte</h3>
+        <p>Les conseqüències comencen a afectar el món real. Els carrers ja no són segurs i Manuel ha de reprendre les armes per protegir la investigació. La veritat té un preu, i la corrupció arriba a les esferes més altes del poder.</p>
+      </div>
+      <div class="chapter-img">
+        <img src="img/foto2.jpg" alt="El Conflicto">
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-    <p>© 2026 Misión Final - Unidad creada por Ariadna, Erik y Fabian.</p>
+  <p>© 2026 Misión Final - Unitat creada per Ariadna, Erik i Fabian.</p>
   <div class="social-icons">
     <span class="material-icons">public</span>
     <span class="material-icons">photo_camera</span>
