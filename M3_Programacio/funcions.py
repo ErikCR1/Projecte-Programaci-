@@ -46,4 +46,14 @@ def login():
     cursor.close()
     conexion.close()
         
+    
+def personatge_aventura():
+    conexion = conectar()
+    
+    cursor = conexion.cursor()
+    
+    print ("-----SELECCIÓN DE PERSONAJES-------")
+    cursor.execute("SELECT id_personatge, nom, descripcio FROM personatge")
+    
+    
 #-------------------------------------------------------------------------------------
