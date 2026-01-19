@@ -1,73 +1,66 @@
 :root {
-  --navy: #0a1f44;
-  --navy-dark: #07162e;
-  --accent: #4da3ff;
-  --accent-soft: #9fc9ff;
-  --bg-main: #0e1b33;
-  --bg-section: #16294d;
-  --text-light: #e8ecf5;
-  --text-muted: #b5bfd9;
+  /* Paleta profesional azul y blanco */
+  --primary: #2563eb;
+  --primary-dark: #1e3a8a;
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-section: #ffffff;
+  --text-main: #0f172a;
+  --text-light: #ffffff;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
 }
 
-/* ---------- RESET ---------- */
+/* Reseteo basico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- BODY ---------- */
+/* Configuracion general */
 body {
-  background: linear-gradient(180deg, var(--bg-main), var(--navy-dark));
-  color: var(--text-light);
+  background-color: var(--bg-body);
+  color: var(--text-main);
   font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 hr {
-  /* Aplicamos tu estilo específico */
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  
-  /* Ajuste de márgenes para que respire el diseño */
-  margin: 0 10%; /* Alineada con el padding de tus secciones */
-  opacity: 1;    /* Asegura que se vea con la opacidad del rgba */
+  border-top: 1px solid var(--border);
+  margin: 0 10%;
 }
 
-/* ---------- LOGO -------------- */
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* ---------- TIPOGRAFIA ---------- */
+/* Tipografia */
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  letter-spacing: 1px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--primary-dark);
 }
 
 h1 { font-size: 1.6rem; }
-
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2.2rem;
-}
-
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
 h3 { font-size: 1.5rem; }
 
 p, li {
   font-weight: 400;
-  font-size: medium;
-  color: var(--text-muted);
+  font-size: 1rem;
+  color: var(--text-main);
 }
 
-/* ---------- HEADER ---------- */
+/* Cabecera */
 header {
-  background: rgba(10, 31, 68, 0.9);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   padding: 1rem 10%;
   display: flex;
   align-items: center;
@@ -75,14 +68,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--border);
 }
 
 header h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
-  color: white;
-  font-weight: 900;
-  letter-spacing: 0,5px;
+  color: var(--primary-dark);
 }
 
 header img {
@@ -90,13 +82,18 @@ header img {
   margin-right: 1rem;
 }
 
-/* ---------- NAV ---------- */
+/* Navegacion */
 nav a {
-  color: var(--text-light);
+  color: var(--text-muted);
   margin-left: 1.5rem;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
 }
 
 nav a::after {
@@ -106,7 +103,7 @@ nav a::after {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background: var(--accent);
+  background: var(--primary);
   transition: width 0.3s;
 }
 
@@ -115,40 +112,38 @@ nav a:hover::after {
 }
 
 .nav-logo-icon {
-    height: 40px;
-    width: auto;
-    display: block;
+  height: 70px;
+  width: auto;
+  display: block;
 }
 
-/* ---------- HERO ---------- */
+/* Seccion Hero */
 .hero {
-  min-height: 60vh; /* Altura consistente */
+  min-height: 60vh;
   display: flex;
-  background: 
-    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
-    url("../img/hero.jpg") center / cover;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
   align-items: center;
-  justify-content: flex-start; /* Siempre alineado a la izquierda */
-  padding: 4rem 10%; /* ESTO ES CLAVE: Mismo margen que tus tarjetas de abajo */
-  gap: 5rem; /* Espacio si decides poner el radar */
+  justify-content: flex-start;
+  padding: 4rem 10%;
+  gap: 5rem;
+  color: var(--text-light);
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 850px;
-    width: 100%;
+  flex: 1;
+  max-width: 850px;
+  width: 100%;
 }
 
 .hero-content h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5 rem;
-    font-weight: 900;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text-muted);
+  font-size: 1.2rem;
+  color: #e0f2fe;
 }
 
 .hero-radar {
@@ -158,27 +153,7 @@ nav a:hover::after {
   align-items: center;
 }
 
-.hero div {
-  max-width: 900px;
-  animation: fadeUp 1.2s ease-out;
-  text-align: left;
-}
-
-.hero p {
-    font-size: 1.0 rem;
-    line-height: 1.8;
-    width: 100%;
-}
-.hero h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.0rem;
-}
-
-/* ---------- SECCIONES GENERALES ---------- */
+/* Secciones generales */
 section {
   padding: 4rem 10%;
   text-align: left;
@@ -186,41 +161,37 @@ section {
   margin: 0 auto;
 }
 
-/* ---------- TARGETES (ESTILO CAPTURAS) ---------- */
-/* Usamos esta clase para Personajes, Historia, Consejos y Equipo */
+/* Tarjetas */
 .card, .section-box, .card-consejos {
-  background-color: var(--bg-section);
+  background-color: var(--bg-card);
   padding: 3rem;
-  border-radius: 15px;
+  border-radius: 12px;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.15);
+  border-color: var(--primary);
 }
 
 .card-consejos {
-  background: linear-gradient(145deg, #1b3366, #13254a);
-  padding: 3rem;
-  border-radius: 20px;
-  max-width: 900px;
-  border-left: 5px solid var(--accent);
+  background-color: #eff6ff;
+  border-left: 5px solid var(--primary);
+  color: var(--primary-dark);
 }
 
-.card-consejos ul { margin: 1.5rem 0 2rem 1.5rem; 
+.card-consejos li {
+  color: var(--text-main);
+  margin-bottom: 1rem;
 }
 
-.card-consejos li { margin-bottom: 1rem; color: var(--text-muted); 
-}
-
-/* Grid para cuando quieras tarjetas lado a lado */
 .cards-container {
   display: flex;
   gap: 2rem;
@@ -230,15 +201,16 @@ section {
 }
 
 .character-img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-bottom: 1rem;
   object-fit: cover;
   display: block;
+  border: 2px solid var(--primary);
 }
 
-/* ---------- ANIMACIÓ SCROLL ---------- */
+/* Animacion Scroll */
 .scroll-anim {
   animation: fadeUp linear;
   animation-timeline: view();
@@ -256,87 +228,89 @@ section {
   }
 }
 
-/* ---------- SVG / RADAR ---------- */
+/* Elementos SVG */
 svg {
   display: block;
-  margin: 2rem 0; /* Alineado a la izquierda */
+  margin: 2rem 0;
 }
 
 .radar-container-left {
   padding: 2rem 10%;
 }
 
-.radar-container-left svg {
-    margin: 0;
-}
-
-/* -------- BOTON --------- */
+/* Botones */
 .button {
-  background: linear-gradient(145deg, #1b3366, #13254a);
-  border: 1px solid var(--accent);
-  padding: 10px 20px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--primary);
+  color: var(--primary) !important;
+  padding: 10px 25px;
   margin-left: 15px;
   text-align: center;
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  border-radius: 8px;
-  color: white !important;
+  border-radius: 6px;
   text-decoration: none;
   transition: all 0.3s ease;
-  vertical-align: middle;
 }
 
 .button:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 0 15px rgba(77, 163, 255, 0.4);
+  background-color: var(--primary);
+  color: var(--text-light) !important;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
-/* ---------- FORMULARI ---------- */
+/* Formularios */
 form {
-  background: var(--bg-section);
+  background: var(--bg-card);
   padding: 3rem;
-  border-radius: 20px;
+  border-radius: 12px;
   max-width: 500px;
   margin-top: 2rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 700;
+  color: var(--primary-dark);
 }
 
 input, textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1.2rem;
-  background: #0e1b33;
-  border: 2px solid #2a3f70;
-  border-radius: 10px;
-  color: white;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-main);
   font-family: 'Montserrat', sans-serif;
   transition: border-color 0.3s;
 }
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: var(--accent);
+  border-color: var(--primary);
+  background: #ffffff;
 }
 
-input:valid, textarea:valid { border-color: #4caf50; }
-input:invalid, textarea:invalid { border-color: #ff6b6b; }
+/* Validacion visual */
+input:valid, textarea:valid { border-left: 4px solid #10b981; }
+input:invalid, textarea:invalid { border-left: 4px solid #ef4444; }
 
-/* ---------- FOOTER ---------- */
+/* Pie de pagina */
 footer {
-  background: var(--navy-dark);
+  background: var(--bg-card);
+  color: var(--text-muted);
   padding: 3rem 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid var(--border);
 }
 
 .social-icons span {
@@ -347,172 +321,163 @@ footer {
 }
 
 .social-icons span:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
-/* ---------- Estils per la pagina d'Usuaris --------- */
-
-/* Grid per a les dades d'usuari */
+/* Pagina de Usuarios */
 .cards-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
 
-/* Estil específic per a les històries */
 .story-card {
-    border-left: 5px solid var(--accent); /* Una línia de color al costat */
-    position: relative;
-    padding-top: 3rem !important;
+  border-left: 5px solid var(--primary);
+  padding-top: 3rem !important;
+  position: relative;
 }
 
 .story-tag {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: rgba(255,255,255,0.1);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 900;
-    letter-spacing: 1px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #e0f2fe;
+  color: var(--primary);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
 }
 
 .tag-hard {
-    color: #ff4d4d;
-    background: rgba(255, 77, 77, 0.1);
+  color: #ef4444;
+  background: #fee2e2;
 }
 
 .card-footer {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    padding-top: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
 }
 
-/* Perfil */
 .profile-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
 }
 
 .profile-icon {
-    font-size: 4rem !important;
+  font-size: 4rem !important;
+  color: var(--primary);
 }
 
 .user-stats {
-    list-style: none;
-    margin-bottom: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
 }
 
 .user-stats li {
-    padding: 5px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
 }
 
 .settings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .setting-item {
-    text-align: center;
-    background: rgba(0,0,0,0.2);
-    padding: 1.5rem;
-    border-radius: 10px;
+  text-align: center;
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: var(--text-main);
 }
 
-/* ---------- Estils per la pagina d'Historia --------- */
-/* Carrusel de Personatges */
+/* Pagina de Historia */
 .character-carousel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding: 2rem 0;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 2rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
 }
 
 .character-card {
-    min-width: 450px;
-    background: #16294d;
-    border-radius: 15px;
-    display: flex;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
+  min-width: 400px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .char-img-container {
-    width: 40%;
-    background: #0a1f44;
+  width: 40%;
+  background: #e2e8f0;
 }
 
 .char-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(0.5);
-    transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: 0.3s;
 }
 
 .character-card:hover .char-img-container img {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .char-info {
-    width: 60%;
-    padding: 1.5rem;
+  width: 60%;
+  padding: 1.5rem;
 }
 
 .char-role {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-top: 5px;
+  display: block;
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-weight: 700;
 }
 
-/* Capítols de la Història */
 .story-chapters {
-    padding: 4rem 10%;
+  padding: 4rem 10%;
 }
 
 .chapter {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    margin-bottom: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 6rem;
 }
 
 .chapter.reverse {
-    flex-direction: row-reverse;
-}
-
-.chapter-text {
-    flex: 1;
+  flex-direction: row-reverse;
 }
 
 .chapter-number {
-    font-size: 4rem;
-    font-weight: 900;
-    color: rgba(255,255,255,0.05);
-    display: block;
-    line-height: 1;
-}
-
-.chapter-img {
-    flex: 1;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #e2e8f0;
+  display: block;
+  line-height: 1;
 }
 
 .chapter-img img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
 }
