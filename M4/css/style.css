@@ -1,0 +1,518 @@
+:root {
+  --navy: #0a1f44;
+  --navy-dark: #07162e;
+  --accent: #4da3ff;
+  --accent-soft: #9fc9ff;
+  --bg-main: #0e1b33;
+  --bg-section: #16294d;
+  --text-light: #e8ecf5;
+  --text-muted: #b5bfd9;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+  background: linear-gradient(180deg, var(--bg-main), var(--navy-dark));
+  color: var(--text-light);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+hr {
+  /* Aplicamos tu estilo específico */
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Ajuste de márgenes para que respire el diseño */
+  margin: 0 10%; /* Alineada con el padding de tus secciones */
+  opacity: 1;    /* Asegura que se vea con la opacidad del rgba */
+}
+
+/* ---------- LOGO -------------- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ---------- TIPOGRAFIA ---------- */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+h1 { font-size: 1.6rem; }
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+
+h3 { font-size: 1.5rem; }
+
+p, li {
+  font-weight: 400;
+  font-size: medium;
+  color: var(--text-muted);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: rgba(10, 31, 68, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 1rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 0,5px;
+}
+
+header img {
+  height: 45px;
+  margin-right: 1rem;
+}
+
+/* ---------- NAV ---------- */
+nav a {
+  color: var(--text-light);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.nav-logo-icon {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 60vh; /* Altura consistente */
+  display: flex;
+  background: 
+    linear-gradient(to right, rgba(10,31,68,0.9), rgba(10,31,68,0.2)),
+    url("../img/hero.jpg") center / cover;
+  align-items: center;
+  justify-content: flex-start; /* Siempre alineado a la izquierda */
+  padding: 4rem 10%; /* ESTO ES CLAVE: Mismo margen que tus tarjetas de abajo */
+  gap: 5rem; /* Espacio si decides poner el radar */
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 850px;
+    width: 100%;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5 rem;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.hero-radar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero div {
+  max-width: 900px;
+  animation: fadeUp 1.2s ease-out;
+  text-align: left;
+}
+
+.hero p {
+    font-size: 1.0 rem;
+    line-height: 1.8;
+    width: 100%;
+}
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.0rem;
+}
+
+/* ---------- SECCIONES GENERALES ---------- */
+section {
+  padding: 4rem 10%;
+  text-align: left;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---------- TARGETES (ESTILO CAPTURAS) ---------- */
+/* Usamos esta clase para Personajes, Historia, Consejos y Equipo */
+.card, .section-box, .card-consejos {
+  background-color: var(--bg-section);
+  padding: 3rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.card-consejos {
+  background: linear-gradient(145deg, #1b3366, #13254a);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 900px;
+  border-left: 5px solid var(--accent);
+}
+
+.card-consejos ul { margin: 1.5rem 0 2rem 1.5rem; 
+}
+
+.card-consejos li { margin-bottom: 1rem; color: var(--text-muted); 
+}
+
+/* Grid para cuando quieras tarjetas lado a lado */
+.cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 2rem;
+}
+
+.character-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- ANIMACIÓ SCROLL ---------- */
+.scroll-anim {
+  animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 35%;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- SVG / RADAR ---------- */
+svg {
+  display: block;
+  margin: 2rem 0; /* Alineado a la izquierda */
+}
+
+.radar-container-left {
+  padding: 2rem 10%;
+}
+
+.radar-container-left svg {
+    margin: 0;
+}
+
+/* -------- BOTON --------- */
+.button {
+  background: linear-gradient(145deg, #1b3366, #13254a);
+  border: 1px solid var(--accent);
+  padding: 10px 20px;
+  margin-left: 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  color: white !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  vertical-align: middle;
+}
+
+.button:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 15px rgba(77, 163, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ---------- FORMULARI ---------- */
+form {
+  background: var(--bg-section);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 500px;
+  margin-top: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  background: #0e1b33;
+  border: 2px solid #2a3f70;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+input:valid, textarea:valid { border-color: #4caf50; }
+input:invalid, textarea:invalid { border-color: #ff6b6b; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--navy-dark);
+  padding: 3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-icons span {
+  margin-left: 1.5rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.social-icons span:hover {
+  color: var(--accent);
+}
+
+/* ---------- Estils per la pagina d'Usuaris --------- */
+
+/* Grid per a les dades d'usuari */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Estil específic per a les històries */
+.story-card {
+    border-left: 5px solid var(--accent); /* Una línia de color al costat */
+    position: relative;
+    padding-top: 3rem !important;
+}
+
+.story-tag {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.tag-hard {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+}
+
+.card-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 1rem;
+}
+
+/* Perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.profile-icon {
+    font-size: 4rem !important;
+}
+
+.user-stats {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.user-stats li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.setting-item {
+    text-align: center;
+    background: rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+/* ---------- Estils per la pagina d'Historia --------- */
+/* Carrusel de Personatges */
+.character-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 2rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+
+.character-card {
+    min-width: 450px;
+    background: #16294d;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.char-img-container {
+    width: 40%;
+    background: #0a1f44;
+}
+
+.char-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.5);
+    transition: 0.3s;
+}
+
+.character-card:hover .char-img-container img {
+    filter: grayscale(0);
+}
+
+.char-info {
+    width: 60%;
+    padding: 1.5rem;
+}
+
+.char-role {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Capítols de la Història */
+.story-chapters {
+    padding: 4rem 10%;
+}
+
+.chapter {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.chapter.reverse {
+    flex-direction: row-reverse;
+}
+
+.chapter-text {
+    flex: 1;
+}
+
+.chapter-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.05);
+    display: block;
+    line-height: 1;
+}
+
+.chapter-img {
+    flex: 1;
+}
+
+.chapter-img img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
