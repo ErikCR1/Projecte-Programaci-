@@ -4,7 +4,7 @@ import mysql.connector
 def conectar():
     return mysql.connector.connect(
         host="127.0.0.1",
-        port=3306,
+        port=3307,
         user="super",
         password="1234",
         database="choose_your_story"
