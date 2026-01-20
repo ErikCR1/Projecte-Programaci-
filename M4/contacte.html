@@ -37,9 +37,9 @@
 <section class="cards">
 
   <div class="card">
-    <span class="material-icons">location_on</span>
-    <h3>Dirección</h3>
-    <p>PLAZA PAU, S/N - BL 3 P. 2 PTA<br>08940 CORNELLA DE LLOBREGAT</p>
+    <span class="material-icons">email</span>
+    <h3>Email</h3>
+    <p>contacto@misionfinal.com</p>
   </div>
 
   <div class="card">
@@ -53,14 +53,11 @@
   </div>
 
   <div class="card">
-    <span class="material-icons">email</span>
-    <h3>Email</h3>
-    <p>contacto@misionfinal.com</p>
+    <span class="material-icons">location_on</span>
+    <h3>Dirección</h3>
+    <p>PLAZA PAU, S/N - BL 3 P. 2 PTA<br>08940 CORNELLA DE LLOBREGAT</p>
   </div>
 
-</section>
-<hr>
-<section>
   <div class="section-box">
     <h2>¿Dónde estamos?</h2>
 
@@ -78,10 +75,12 @@
     <h2>Formulario de contacto</h2>
 
     <form>
-
+      
+      <p>Los puntos con * son obligatorios.</p>
+      
       <input
         type="text"
-        placeholder="Nombre"
+        placeholder="Nombre y Apellidos*"
         required
         pattern="[A-Za-zÀ-ÿ\s]{3,}"
         title="Introduce un nombre válido (mínimo 3 letras)">
@@ -89,26 +88,25 @@
       <input
         type="tel"
         placeholder="Teléfono"
-        required
         pattern="[0-9]{9}"
         title="Introduce un teléfono de 9 dígitos">
 
       <input
         type="email"
-        placeholder="Correo electrónico"
+        placeholder="Correo electrónico*"
         required>
 
       <textarea
         rows="4"
-        placeholder="Escribe tu mensaje"
+        placeholder="Escribe tu mensaje*"
         required
         pattern=".{10,}"
         title="El mensaje debe tener al menos 10 caracteres"></textarea>
 
       <input type="submit" value="Enviar solicitud"
         style="
-          background: var(--accent);
-          color: #fff;
+          background: #4053ab24;
+          color: #000000;
           font-weight: 700;
           border: none;
           border-radius: 10px;
