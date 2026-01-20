@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuari Sistemes | Misión final</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
+    <h1>Misión final</h1>
+  </div>
+  <nav>
+    <a href="index.html">Inici</a>
+    <a href="instruccions.html">Instruccions</a>
+    <a href="historia.html">Història</a>
+    <a href="usuari.html" class="active">Usuari</a>
+    <a href="contacte.html">Contacte</a>
+    <a href="aboutus.html">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero hero-user">
+    <div class="hero-content">
+      <h2>Terminal d'usuari</h2>
+      <p>
+        Accés autoritzat. Benvingut de nou, Agent. Des d'aquesta terminal podràs gestionar 
+        el teu perfil, revisar el teu progrés operatiu i, el més important, desplegar-te 
+        en noves línies temporals escollint la teva propera història.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Estat de l'agent</h2>
+    <div class="cards-grid">
+      <div class="card card-profile">
+        <div class="profile-header">
+            <span class="material-icons profile-icon">account_circle</span>
+            <div>
+                <h3>Perfil Actiu</h3>
+                <p>ID: #4402-B</p>
+            </div>
+        </div>
+        <ul class="user-stats">
+            <li><strong>Rant:</strong> Capità Operatiu</li>
+            <li><strong>Missions Completades:</strong> 12</li>
+            <li><strong>Taxa de Supervivència:</strong> 84%</li>
+        </ul>
+        <a href="#" class="button-small">Editar Perfil</a>
+      </div>
+  </section>
+
+  <hr>
+
+  <section id="story-selector">
+    <h2>Selecció d'història</h2>
+    <p style="margin-bottom: 2rem;">Tria una de les línies temporals disponibles per començar la teva missió. Cada elecció reescriu el sistema.</p>
+    
+    <div class="cards">
+      <div class="card story-card">
+        <div class="story-tag">NIVELL FÀCIL</div>
+        <h3>Operació Èxode</h3>
+        <p>Una infiltració silenciosa en una base secreta als afores de la ciutat. L'objectiu és extreure informació sense ser detectat. Ideal per a nous reclutes.</p>
+        <br>
+        <div class="card-footer">
+            <span class="material-icons">timer</span> 20 min
+            <a href="historia.html?mission=exode" class="button">Iniciar Missió</a>
+        </div>
+      </div>
+
+      <div class="card story-card accent-border">
+        <div class="story-tag tag-hard">NIVELL CRÍTIC</div>
+        <h3>Protocol Omega</h3>
+        <p>El sistema està col·lapsant. Tens 10 minuts per prendre decisions d'alt risc que decidiran el destí de milions de persones. No hi ha marge d'error.</p>
+        <br>
+        <div class="card-footer">
+            <span class="material-icons">timer</span> 10 min
+            <a href="historia.html?mission=omega" class="button">Iniciar Missió</a>
+        </div>
+      </div>
+
+      <div class="card story-card">
+        <div class="story-tag">NIVELL MITJÀ</div>
+        <h3>Traïció a l'ombra</h3>
+        <p>Un dels teus aliats és un espia. Hauràs de gestionar els teus recursos i diàlegs per descobrir la veritat abans que sigui massa tard.</p>
+        <div class="card-footer">
+            <span class="material-icons">timer</span> 45 min
+            <a href="historia.html?mission=shadow" class="button">Iniciar Missió</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <div class="section-box">
+        <h2>Configuració del Sistema</h2>
+        <div class="settings-grid">
+            <div class="setting-item">
+                <span class="material-icons">volume_up</span>
+                <p>Volum General</p>
+                <input type="range" min="0" max="100" value="80">
+            </div>
+            <div class="setting-item">
+                <span class="material-icons">visibility</span>
+                <p>Mode Visual: <strong>Alta Definició</strong></p>
+            </div>
+            <div class="setting-item">
+                <span class="material-icons">g_translate</span>
+                <p>Idioma: <strong>Català</strong></p>
+            </div>
+        </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2026 Misión Final - Unitat creada per Ariadna, Erik i Fabian.</p>
+  <div class="social-icons">
+    <span class="material-icons">public</span>
+    <span class="material-icons">photo_camera</span>
+    <span class="material-icons">thumb_up</span>
+    <span class="material-icons">music_note</span>
+  </div>
+</footer>
+
+</body>
+</html>
