@@ -1,5 +1,3 @@
-ogramacio\game.py
-@@ -1,113 +0,0 @@
 #Fabian: Motor de juego, bucle incial y toma de desciciones 
 
 from funciones import *
