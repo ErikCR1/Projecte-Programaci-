@@ -3,12 +3,18 @@ import mysql.connector
 #--------------Conexion----------------
 def conectar():
     return mysql.connector.connect(
-        host="localhost",
-        user="erik",
-        password="123",
+        host="127.0.0.1",
+        port=3307,
+        user="super",
+        password="1234",
         database="choose_your_story"
     )
 #--------------------------------------
+
+#---------Menu---------------------
+def menu(options):
+    print("CHOOSE YOUR STORY".center)
+
 
 
 #-----------------Login----------------
