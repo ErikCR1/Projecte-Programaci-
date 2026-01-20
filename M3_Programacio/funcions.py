@@ -44,13 +44,18 @@ def login():
         try:
             cursor.execute(query_insert, (user, password))
             conexion.commit() 
-            print(f"Usuari '{user}' creat amb èxit. Ja pots començar!")
+            print(f"Usuari '{user}' creat amb èxit.")
+            
+            # CIERRA AQUÍ
+            cursor.close()
+            conexion.close()
             return True
+        
         except Exception as e:
-            print(f"Error al registre: {e}")
+            # Y AQUÍ TAMBIÉN POR SI HAY ERROR
+            cursor.close()
+            conexion.close()
             return False
-    cursor.close()
-    conexion.close()
         
     
 def personatge_aventura():
