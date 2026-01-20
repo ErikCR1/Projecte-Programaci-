@@ -4,18 +4,12 @@ import mysql.connector
 def conectar():
     return mysql.connector.connect(
         host="127.0.0.1",
-        port=3306,
+        port=3308,
         user="super",
         password="1234",
         database="choose_your_story"
     )
 #--------------------------------------
-
-#---------Menu---------------------
-def menu(options):
-    print("CHOOSE YOUR STORY".center)
-
-
 
 #-----------------Login----------------
 def login():
@@ -44,13 +38,18 @@ def login():
         try:
             cursor.execute(query_insert, (user, password))
             conexion.commit() 
-            print(f"Usuari '{user}' creat amb èxit. Ja pots començar!")
+            print(f"Usuari '{user}' creat amb èxit.")
+            
+            # CIERRA AQUÍ
+            cursor.close()
+            conexion.close()
             return True
+        
         except Exception as e:
-            print(f"Error al registre: {e}")
+            # Y AQUÍ TAMBIÉN POR SI HAY ERROR
+            cursor.close()
+            conexion.close()
             return False
-    cursor.close()
-    conexion.close()
         
     
 def personatge_aventura():
