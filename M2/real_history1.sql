@@ -8,7 +8,7 @@ TRUNCATE TABLE opcio;
 TRUNCATE TABLE pas;
 TRUNCATE TABLE aventura;
 TRUNCATE TABLE personatge;
-SET FOREIGN_KEY_CHECKS = 1;
+SET FOREIGN_KEY_CHECKS = 1;	
 
 -- ======================================================
 -- AVENTURA 1: RESCATE CRÍTICO
@@ -61,12 +61,13 @@ INSERT INTO pas (id_pas, id_aventura, descripcio_text, es_final) VALUES
 (26, 2, 'Intentas arrestar al gemelo, pero el te dispara. Has muerto.', TRUE),
 (27, 2, 'Con las pruebas del veneno y la orquídea, reúnes a todos en el salón. ¿Quién es el asesino?', FALSE),
 (28, 2, 'Acusas al mayordomo sin pruebas suficientes. Te demandan y pierdes tu placa. Fallo.', TRUE),
-(29, 2, '¡ÉXITO! Pruebas que el gemelo y el jardinero eran cómplices. Caso cerrado, detective.', TRUE);
+(29, 2, '¡ÉXITO! Pruebas que el gemelo y el jardinero eran cómplices. Caso cerrado, detective.', TRUE),
+(30, 2, 'El mayordomo se niega a hablar y avisa al asesino. Esa noche te emboscan. Has muerto.', TRUE);
 
 INSERT INTO opcio (id_pas_actual, id_pas_seguent, text_resposta) VALUES 
 (20, 21, 'Revisar el cadáver'), (20, 22, 'Hablar con el mayordomo'),
 (21, 23, 'Ir al jardín solo'), (21, 24, 'Investigar la cocina'),
-(22, 25, 'Usar psicología'), (22, 23, 'Presionar agresivamente'),
+(22, 25, 'Usar psicología'), (22, 30, 'Presionar agresivamente'),
 (24, 27, 'Reunir a los sospechosos'),
 (25, 27, 'Ir al salón principal'),
 (27, 28, 'Acusar al mayordomo'), (27, 29, 'Acusar al gemelo');

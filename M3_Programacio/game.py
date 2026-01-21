@@ -11,9 +11,9 @@ def verificador(tamaño, opcion):
 def game(user):
     id_user = buscar_usuario(user)
     ingame = True
-    while ingame:
 
-        aventuras = cargar_aventura()
+    while ingame:
+        aventuras = get_adventures_with_chars()
         mostrar_aventura(aventuras)
         op_aventura = input("Elige aventura: ")
         while (verificador(len(aventuras), op_aventura)):
@@ -22,7 +22,7 @@ def game(user):
             op_aventura = input("Elige aventura: ")
 
 
-        personajes = cargar_personaje()
+        personajes = get_characters()
         mostrar_personaje(personajes)
         op_personaje = input("Elige personaje: ")
         while (verificador(len(aventuras), op_personaje)):
@@ -30,9 +30,11 @@ def game(user):
             mostrar_personaje(personajes)
             op_personaje = input("Elige personaje: ")
         
-        insert_partida(id_user[0], op_aventura, op_personaje)
+        insertCurrentGame(id_user[0], op_aventura, op_personaje)
+        partida_actual = get_id_current_game()
 
-        evento = cargar_eventos(op_aventura)
+
+        evento = get_answers_bystep_adventure(op_aventura)
         fin_partida = 0
         pas = 1
         id_pas = 1
@@ -43,7 +45,7 @@ def game(user):
             if int(evento[pas - 1].get('es_final')) == 1:
                 fin_partida = 1
             else:
-                decisiones = cargar_decisiones(id_pas)
+                decisiones = get_id_bystep_adventure(id_pas)
                 mostrar_decisiones(decisiones)
                 opcion_decision = input("Que decision escoges: ")
                 while (verificador(len(decisiones), opcion_decision)):
@@ -51,11 +53,13 @@ def game(user):
                     mostrar_decisiones(decisiones)
                     opcion_decision = input("Que decision escoges: ")
 
+                insertCurrentChoice(partida_actual[0].get ('id_partida'), evento[int(pas) - 1].get('id_pas'), decisiones[int(opcion_decision) - 1].get('id_opcio'))
                 pas = decisiones[int(opcion_decision) - 1].get('id_pas_seguent')
                 id_pas = pas 
-                print(pas)
+
                 if int(op_aventura) == 2:
                     pas -= 19
+                
 
 
         acabar = input("Partida finalizar, quieres seguir jugando ? (1:Si / 2:No)")
@@ -63,12 +67,12 @@ def game(user):
             print("Seleciona una opcion correcta: ")
             acabar = input("Partida finalizar, quieres seguir jugando ? (1:Si / 2:No)")
 
-        if acabar == 1:
+        if int(acabar) == 2:
             ingame = False
         
 def mostrar_aventura(adventures):
     for data in adventures:
-        print(data.get('id_aventura'), data.get('nom'), data.get('descripcio'))
+        print(str(data.get('id_aventura')).ljust(10), str(data.get('nom')).ljust(10), str(data.get('descripcio')).ljust(10))
 
 def mostrar_personaje(adventures):
     for data in adventures:

@@ -47,7 +47,7 @@ CREATE TABLE partida (
     id_usuari INT NOT NULL,
     id_personatge INT NOT NULL,
     id_aventura INT NOT NULL,
-    data_inici DATETIME NOT NULL, -- Para guardar la fecha y hora exacta
+    data_inici DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Para guardar la fecha y hora exacta
     FOREIGN KEY (id_usuari) REFERENCES usuari(id_usuari),
     FOREIGN KEY (id_personatge) REFERENCES personatge(id_personatge),
     FOREIGN KEY (id_aventura) REFERENCES aventura(id_aventura)
@@ -55,10 +55,11 @@ CREATE TABLE partida (
 
 -- 6. Registro de decisiones tomadas en cada paso
 CREATE TABLE decisio_partida (
+	id INT NOT NULL AUTO_INCREMENT,
     id_partida INT NOT NULL,
     id_pas INT NOT NULL,
     id_opcio_triada INT NOT NULL,
-    PRIMARY KEY (id_partida, id_pas), -- Un registro por paso en cada partida
+    PRIMARY KEY (id), -- Un registro por paso en cada partida
     FOREIGN KEY (id_partida) REFERENCES partida(id_partida),
     FOREIGN KEY (id_pas) REFERENCES pas(id_pas),
     FOREIGN KEY (id_opcio_triada) REFERENCES opcio(id_opcio)

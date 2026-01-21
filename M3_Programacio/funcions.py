@@ -2,10 +2,11 @@ import mysql.connector
 
 #--------------Conexion----------------
 def conectar():
+    puerto = input("Puerto a conectar: ") #En contenedor: 3006 y en ssh 3308
     return mysql.connector.connect(
         host="127.0.0.1",
-        port=3308,
-        user="admin",
+        port=puerto,
+        user="super",
         password="1234",
         database="choose_your_story"
     )
@@ -28,8 +29,9 @@ def login():
     conexion = conectar()
 
     cursor = conexion.cursor()
-
-    print("-----LOGIN / REGISTRO--------")
+    print("-"*50)
+    print("LOGIN / REGISTRO".center(50))
+    print("-"*50)
     user = input("Introduce tu nombre de usuario: ")
     password = input("Introduce su contraseña: ")
 
@@ -42,6 +44,7 @@ def login():
     if resultado:
         if resultado[0] == password:
             print(f"S'ha iniciat sessió correctament. Benvingut de nou, {user}!")
+            input("Enter para continuar...")
             return string
         else:
             print("Error: La contrasenya és incorrecta per a aquest usuari.")
@@ -53,6 +56,7 @@ def login():
             cursor.execute(query_insert, (user, password))
             conexion.commit() 
             print(f"Usuari '{user}' creat amb èxit.")
+            input("Enter para continuar...")
             
             # CIERRA AQUÍ
             cursor.close()
@@ -65,11 +69,13 @@ def login():
             conexion.close()
             return False
         
-def cargar_aventura():
+def get_adventures_with_chars():
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
 
-    print ("----AVENTURAS DISPONIBLES----")
+    print("-"*50)
+    print ("AVENTURAS DISPONIBLES".center(50))
+    print("-"*50)
     cursor.execute("SELECT id_aventura, nom, descripcio FROM aventura")
     
     lista = cursor.fetchall()
@@ -77,7 +83,7 @@ def cargar_aventura():
     conexion.close()
     return lista
 
-def insert_partida(id_usuari, id_personatge, id_aventura):
+def insertCurrentGame(id_usuari, id_personatge, id_aventura):
 
     conexion = conectar()
     cursor = conexion.cursor()
@@ -88,24 +94,47 @@ def insert_partida(id_usuari, id_personatge, id_aventura):
         conexion.commit() 
         print(f"Partida creada amb exit.")
             
-            # CIERRA AQUÍ
+
         cursor.close()
         conexion.close()
         return True
         
     except Exception as e:
-        # Y AQUÍ TAMBIÉN POR SI HAY ERROR
+        print(e)
+        cursor.close()
+        conexion.close()
+        return False
+
+#INSERT DE DECISIONES & EVENTOS
+def insertCurrentChoice(id_partida, id_pas, id_opcio_triada):
+    conexion = conectar()
+    cursor = conexion.cursor(dictionary=True)
+    query_insert = "INSERT INTO decisio_partida (id_partida, id_pas, id_opcio_triada) VALUES (%s, %s, %s)"
+
+    try:
+        cursor.execute(query_insert, (id_partida, id_pas, id_opcio_triada))
+        conexion.commit()
+
+        cursor.close()
+        conexion.close()
+        return True
+
+    except Exception as e:
+        print(e)
         cursor.close()
         conexion.close()
         return False
 
 
 
-def cargar_personaje():
+
+def get_characters():
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
 
-    print ("----Personajes DISPONIBLES----")
+    print("-"*50)
+    print ("PERSONAJES DISPONIBLES".center(50))
+    print("-"*50)
     cursor.execute("SELECT id_personatge, nom, descripcio FROM personatge")
     
     lista = cursor.fetchall()
@@ -114,10 +143,11 @@ def cargar_personaje():
     return lista
 
 
-def cargar_eventos(opcion):
+def get_answers_bystep_adventure(opcion):
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
     print("Comenzant la historia", opcion, "...")
+    input("Enter para continuar...")
     query = "SELECT * FROM pas WHERE id_aventura = %s"
     cursor.execute(query, (opcion,))
     
@@ -126,7 +156,7 @@ def cargar_eventos(opcion):
     conexion.close()
     return lista
 
-def cargar_decisiones(opcion):
+def get_id_bystep_adventure(opcion):
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
     query = "SELECT * FROM opcio WHERE id_pas_actual = %s"
@@ -137,5 +167,15 @@ def cargar_decisiones(opcion):
     conexion.close()
     return lista
 
-
+def get_id_current_game():
+    conexion = conectar()
+    cursor = conexion.cursor(dictionary=True)
+    query = "SELECT id_partida FROM partida ORDER BY Id_partida DESC LIMIT 1;"
+    cursor.execute(query)
+    
+    lista = cursor.fetchall()
+    cursor.close()
+    conexion.close()
+    return lista
 #-------------------------------------------------------------------------------------
+
