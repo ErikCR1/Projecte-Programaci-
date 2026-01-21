@@ -1,12 +1,11 @@
 from funcions import *
 import time
 def verificador(tamaño, opcion):
-    
-    if isinstance(opcion, int):
-        if opcion <= tamaño:
-            return True
-        
-    return False    
+    if opcion.isdigit():
+        if int(opcion) <= int(tamaño) and int(opcion) > 0:
+            return False
+
+    return True    
 
 
 def game(user):
@@ -19,6 +18,7 @@ def game(user):
         op_aventura = input("Elige aventura: ")
         while (verificador(len(aventuras), op_aventura)):
             print("Has introducido una opcion incorrecta")
+            mostrar_aventura(aventuras)
             op_aventura = input("Elige aventura: ")
 
 
@@ -27,10 +27,45 @@ def game(user):
         op_personaje = input("Elige personaje: ")
         while (verificador(len(aventuras), op_personaje)):
             print("Has introducido una opcion incorrecta")
+            mostrar_personaje(personajes)
             op_personaje = input("Elige personaje: ")
         
         insert_partida(id_user[0], op_aventura, op_personaje)
 
+        evento = cargar_eventos(op_aventura)
+        fin_partida = 0
+        pas = 1
+        id_pas = 1
+        if int(op_aventura) == 2:
+                    id_pas = 20
+        while fin_partida == 0:
+            print(evento[pas - 1].get('descripcio_text'))
+            if int(evento[pas - 1].get('es_final')) == 1:
+                fin_partida = 1
+            else:
+                decisiones = cargar_decisiones(id_pas)
+                mostrar_decisiones(decisiones)
+                opcion_decision = input("Que decision escoges: ")
+                while (verificador(len(decisiones), opcion_decision)):
+                    print("Opcion no valida: ")
+                    mostrar_decisiones(decisiones)
+                    opcion_decision = input("Que decision escoges: ")
+
+                pas = decisiones[int(opcion_decision) - 1].get('id_pas_seguent')
+                id_pas = pas 
+                print(pas)
+                if int(op_aventura) == 2:
+                    pas -= 19
+
+
+        acabar = input("Partida finalizar, quieres seguir jugando ? (1:Si / 2:No)")
+        while (verificador(2, acabar)):
+            print("Seleciona una opcion correcta: ")
+            acabar = input("Partida finalizar, quieres seguir jugando ? (1:Si / 2:No)")
+
+        if acabar == 1:
+            ingame = False
+        
 def mostrar_aventura(adventures):
     for data in adventures:
         print(data.get('id_aventura'), data.get('nom'), data.get('descripcio'))
@@ -39,10 +74,17 @@ def mostrar_personaje(adventures):
     for data in adventures:
         print(data.get('id_personatge'), data.get('nom'), data.get('descripcio'))
 
+def mostrar_decisiones(decision):
+    i = 1
+    for data in decision:
+        print(i, data.get('text_resposta'))
+        i += 1
+
 def main():
     user = login()
-    if not user:
-        return
+    while not user:
+        print("Contraseña incorrecta")
+        user = login()
     while True:
         #menu principal
         print("\n" + "="*50)

@@ -73,6 +73,7 @@ def cargar_aventura():
     cursor.execute("SELECT id_aventura, nom, descripcio FROM aventura")
     
     lista = cursor.fetchall()
+    cursor.close()
     conexion.close()
     return lista
 
@@ -108,7 +109,33 @@ def cargar_personaje():
     cursor.execute("SELECT id_personatge, nom, descripcio FROM personatge")
     
     lista = cursor.fetchall()
+    cursor.close()
     conexion.close()
     return lista
+
+
+def cargar_eventos(opcion):
+    conexion = conectar()
+    cursor = conexion.cursor(dictionary=True)
+    print("Comenzant la historia", opcion, "...")
+    query = "SELECT * FROM pas WHERE id_aventura = %s"
+    cursor.execute(query, (opcion,))
     
+    lista = cursor.fetchall()
+    cursor.close()
+    conexion.close()
+    return lista
+
+def cargar_decisiones(opcion):
+    conexion = conectar()
+    cursor = conexion.cursor(dictionary=True)
+    query = "SELECT * FROM opcio WHERE id_pas_actual = %s"
+    cursor.execute(query, (opcion,))
+    
+    lista = cursor.fetchall()
+    cursor.close()
+    conexion.close()
+    return lista
+
+
 #-------------------------------------------------------------------------------------
