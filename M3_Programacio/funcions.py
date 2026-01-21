@@ -2,10 +2,9 @@ import mysql.connector
 
 #--------------Conexion----------------
 def conectar():
-    puerto = input("Puerto a conectar: ") #En contenedor: 3006 y en ssh 3308
     return mysql.connector.connect(
         host="127.0.0.1",
-        port=puerto,
+        port=3308,
         user="super",
         password="1234",
         database="choose_your_story"
