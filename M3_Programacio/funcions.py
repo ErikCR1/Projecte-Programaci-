@@ -28,9 +28,9 @@ def login():
     conexion = conectar()
 
     cursor = conexion.cursor()
-    print("-"*50)
-    print("LOGIN / REGISTRO".center(50))
-    print("-"*50)
+    print("-"*120)
+    print("LOGIN / REGISTRO".center(120))
+    print("-"*120)
     user = input("Introduce tu nombre de usuario: ")
     password = input("Introduce su contraseña: ")
 
@@ -72,9 +72,7 @@ def get_adventures_with_chars():
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
 
-    print("-"*50)
-    print ("AVENTURAS DISPONIBLES".center(50))
-    print("-"*50)
+
     cursor.execute("SELECT id_aventura, nom, descripcio FROM aventura")
     
     lista = cursor.fetchall()
@@ -131,9 +129,6 @@ def get_characters():
     conexion = conectar()
     cursor = conexion.cursor(dictionary=True)
 
-    print("-"*50)
-    print ("PERSONAJES DISPONIBLES".center(50))
-    print("-"*50)
     cursor.execute("SELECT id_personatge, nom, descripcio FROM personatge")
     
     lista = cursor.fetchall()

@@ -52,25 +52,32 @@ INSERT INTO aventura (id_aventura, nom, descripcio)
 VALUES (2, 'Muerte en la casa de los Gemelos', 'Un gemelo ha sido asesinado. Debes encontrar al culpable antes de que escape.');
 
 INSERT INTO pas (id_pas, id_aventura, descripcio_text, es_final) VALUES 
-(20, 2, 'Llegas a la escena. El cuerpo está en el estudio. ¿Revisas el cadáver o interrogas al mayordomo?', FALSE),
-(21, 2, 'Encuentras un pétalo de orquídea en la mano de la víctima. ¿Buscas en el jardín o en la cocina?', FALSE),
-(22, 2, 'El mayordomo parece nervioso. ¿Le presionas agresivamente o usas la psicología?', FALSE),
-(23, 2, 'En el jardín, alguien te golpea por la espalda. Has muerto.', TRUE),
-(24, 2, 'En la cocina encuentras veneno oculto en un frasco de té. ¿A quién confrontas?', FALSE),
-(25, 2, 'El mayordomo confiesa que el gemelo estaba en el jardín. Vas a buscarlo.', FALSE),
-(26, 2, 'Intentas arrestar al gemelo, pero el te dispara. Has muerto.', TRUE),
-(27, 2, 'Con las pruebas del veneno y la orquídea, reúnes a todos en el salón. ¿Quién es el asesino?', FALSE),
-(28, 2, 'Acusas al mayordomo sin pruebas suficientes. Te demandan y pierdes tu placa. Fallo.', TRUE),
-(29, 2, '¡ÉXITO! Pruebas que el gemelo y el jardinero eran cómplices. Caso cerrado, detective.', TRUE),
-(30, 2, 'El mayordomo se niega a hablar y avisa al asesino. Esa noche te emboscan. Has muerto.', TRUE);
+(20, 2, 'Llegas a la escena. La víctima sostiene un sobre de té y tiene los zapatos llenos de barro. ¿Qué investigas?', FALSE),
+(21, 2, 'El cadáver huele a almendras amargas (cianuro) y tiene barro rojo en las botas. ¿Dónde buscas el origen?', FALSE),
+(22, 2, 'El mayordomo dice: "Él nunca tomaba té en el estudio". Ves barro rojo en la alfombra. ¿Cómo sigues?', FALSE),
+(23, 2, 'Entras al jardín. El jardinero está cavando un hoyo sospechoso. ¿Le ayudas o le registras?', FALSE),
+(24, 2, 'En la cocina encuentras el frasco de té. Tiene huellas de alguien que usa guantes de seda. ¿Qué haces?', FALSE),
+(25, 2, 'Usas la psicología: "El barro te delata". El mayordomo confiesa: "Vi al jardinero hablando con el gemelo".', FALSE),
+(26, 2, 'El jardinero se asusta y te golpea con la pala. Te entierra vivo. Has muerto.', TRUE),
+(27, 2, 'Tienes las pruebas: barro rojo, guantes de seda y el veneno. Reúnes a todos. ¿A quién confrontas?', FALSE),
+(28, 2, 'Acusas al mayordomo. Él ríe y muestra sus manos limpias. El verdadero asesino escapa. Fallo.', TRUE),
+(29, 2, '¡ÉXITO! El gemelo usó los guantes y el jardinero puso el veneno. El barro rojo del jardín los delata.', TRUE),
+(30, 2, 'Acusas solo al jardinero. Él confiesa, pero el gemelo (el cerebro) queda libre y te mata después. Fallo.', TRUE);
 
 INSERT INTO opcio (id_pas_actual, id_pas_seguent, text_resposta) VALUES 
-(20, 21, 'Revisar el cadáver'), (20, 22, 'Hablar con el mayordomo'),
-(21, 23, 'Ir al jardín solo'), (21, 24, 'Investigar la cocina'),
-(22, 25, 'Usar psicología'), (22, 30, 'Presionar agresivamente'),
-(24, 27, 'Reunir a los sospechosos'),
-(25, 27, 'Ir al salón principal'),
-(27, 28, 'Acusar al mayordomo'), (27, 29, 'Acusar al gemelo');
+(20, 21, 'Analizar pistas en el cuerpo'),
+(20, 22, 'Interrogar al mayordomo'),
+(21, 23, 'Ir al jardín (por el barro)'),
+(21, 24, 'Ir a la cocina (por el té)'),
+(22, 25, 'Analizar la alfombra con barro'),
+(22, 24, 'Ir a la cocina a por el té'),
+(23, 26, 'Ayudar al jardinero'),
+(23, 27, 'Registrar su cobertizo'),
+(24, 27, 'Ir al salón con el frasco'),
+(25, 27, 'Llamar a todos al salón'),
+(27, 28, 'Confrontar al Mayordomo'),
+(27, 29, 'Confrontar al Gemelo y al Jardinero'),
+(27, 30, 'Confrontar solo al Jardinero');
 
 -- ======================================================
 -- PERSONAJES (Solo los dos originales)

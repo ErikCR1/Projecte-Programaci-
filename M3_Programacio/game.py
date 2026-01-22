@@ -14,20 +14,20 @@ def game(user):
 
     while ingame:
         aventuras = get_adventures_with_chars()
-        mostrar_aventura(aventuras)
+        getFormatedAdventures(aventuras)
         op_aventura = input("Elige aventura: ")
         while (verificador(len(aventuras), op_aventura)):
             print("Has introducido una opcion incorrecta")
-            mostrar_aventura(aventuras)
+            getFormatedAdventures(aventuras)
             op_aventura = input("Elige aventura: ")
 
 
         personajes = get_characters()
-        mostrar_personaje(personajes)
+        getFormatedCharacters(personajes)
         op_personaje = input("Elige personaje: ")
         while (verificador(len(aventuras), op_personaje)):
             print("Has introducido una opcion incorrecta")
-            mostrar_personaje(personajes)
+            getFormatedCharacters(personajes)
             op_personaje = input("Elige personaje: ")
         
         insertCurrentGame(id_user[0], op_aventura, op_personaje)
@@ -41,16 +41,24 @@ def game(user):
         if int(op_aventura) == 2:
                     id_pas = 20
         while fin_partida == 0:
+
+            nombre_aventura = aventuras[int(op_aventura) - 1].get('nom')
+            print("*"*120)
+            print(str(nombre_aventura).center(120, "="))
+            print("*"*120)
+            print()
+
             print(evento[pas - 1].get('descripcio_text'))
+            print()
             if int(evento[pas - 1].get('es_final')) == 1:
                 fin_partida = 1
             else:
                 decisiones = get_id_bystep_adventure(id_pas)
-                mostrar_decisiones(decisiones)
+                getFormatedAnswers(decisiones)
                 opcion_decision = input("Que decision escoges: ")
                 while (verificador(len(decisiones), opcion_decision)):
                     print("Opcion no valida: ")
-                    mostrar_decisiones(decisiones)
+                    getFormatedAnswers(decisiones)
                     opcion_decision = input("Que decision escoges: ")
 
                 insertCurrentChoice(partida_actual[0].get ('id_partida'), evento[int(pas) - 1].get('id_pas'), decisiones[int(opcion_decision) - 1].get('id_opcio'))
@@ -70,18 +78,39 @@ def game(user):
         if int(acabar) == 2:
             ingame = False
         
-def mostrar_aventura(adventures):
+def getFormatedAdventures(adventures):
+    ancho_id = 20    # 12 de texto + 8 espacios de margen
+    ancho_nom = 40   # Espacio de sobra para el título
+    
+    linea_sup = "Adventure".center(120, "=")
+    header = "Id Adventure".ljust(ancho_id) + "Adventure".ljust(ancho_nom) + "Description"
+    separador = "*" * len(linea_sup)
+    
+    resultado = linea_sup + "\n\n" + header + "\n" + separador + "\n"
+    print (resultado)
     for data in adventures:
-        print(str(data.get('id_aventura')).ljust(10), str(data.get('nom')).ljust(10), str(data.get('descripcio')).ljust(10))
+        print(str(data.get('id_aventura')).ljust(ancho_id), str(data.get('nom')).ljust(ancho_nom), str(data.get('descripcio')))
+        print()
 
-def mostrar_personaje(adventures):
+def getFormatedCharacters(adventures):
+    ancho_id = 20    # 12 de texto + 8 espacios de margen
+    ancho_nom = 40   # Espacio de sobra para el título
+    
+    linea_sup = "Characters".center(120, "=")
+    header = "Id Character".ljust(ancho_id) + "Character".ljust(ancho_nom) + "Description"
+    separador = "*" * len(linea_sup)
+    
+    resultado = linea_sup + "\n\n" + header + "\n" + separador + "\n"
+    print (resultado)
     for data in adventures:
-        print(data.get('id_personatge'), data.get('nom'), data.get('descripcio'))
+        print(str(data.get('id_personatge')).ljust(ancho_id), str(data.get('nom')).ljust(ancho_nom), str(data.get('descripcio')))
+        print()
 
-def mostrar_decisiones(decision):
+def getFormatedAnswers(decision):    
     i = 1
     for data in decision:
-        print(i, data.get('text_resposta'))
+        print(i, ")", data.get('text_resposta'))
+        print()
         i += 1
 
 def main():
@@ -91,9 +120,9 @@ def main():
         user = login()
     while True:
         #menu principal
-        print("\n" + "="*50)
-        print("MENÚ PRINCIPAL".center(50))
-        print("="*50)
+        print("\n" + "="*120)
+        print("MENÚ PRINCIPAL".center(120))
+        print("="*120)
         print("1. Jugar Nueva Aventura")
         print("2. Salir")
         
