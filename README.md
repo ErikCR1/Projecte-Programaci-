@@ -1,9 +1,5 @@
 # Choose Your Story: Engine & Adventures
 
-![Status](https://img.shields.io/badge/Status-Projecte%20Finalitzat-brightgreen)
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![MySQL](https://img.shields.io/badge/DB-MySQL-orange)
-
 Benvinguts a **Choose Your Story**, un motor de jocs d'aventura conversacional on les teves decisions dictaminen el destí dels protagonistes. Aquest projecte integra programació en Python, gestió de bases de dades relacionals i una infraestructura de servidor segura.
 
 ---
