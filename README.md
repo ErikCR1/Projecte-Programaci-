@@ -41,4 +41,4 @@ Abans de jugar, cal importar els esquemes situats a la carpeta `M02_Base_Dades/`
 ### 2. Connexió Segura (SSH)
 Com que el servidor està protegit, és necessari mapejar el port remot al teu local:
 ```bash
-ssh -L 3308:localhost:3306 elteu_usuari@kamehouse.iesevissa.cat
+$ ssh -p 20127 aventura5@ieticloudpro.ieti.cat
