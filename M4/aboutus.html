@@ -2,66 +2,86 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre nosotros | Misión final</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros | Misión Final</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <header>
   <div class="logo-container">
-    <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
-    <h1>Misión final</h1>
+    <img src="img/logo.png" alt="Logo Misión Final" class="nav-logo-icon">
+    <h1>Misión Final</h1>
   </div>
   <nav>
     <a href="index.html">Inicio</a>
     <a href="instruccions.html">Instrucciones</a>
     <a href="historia.html">Historia</a>
+    <a href="usuari.html">Usuario</a>
     <a href="contacte.html">Contacto</a>
-    <a href="aboutus.html">About</a>
+    <a href="aboutus.html" class="active">Nosotros</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Sobre nosotros</h2>
-    <p>
-      Somos un equipo apasionado por los videojuegos narrativos y las historias
-      donde cada decisión importa.
-    </p>
-  </div>
-</section>
+<main>
+    <section class="hero" style="min-height: 40vh;">
+      <div class="hero-content">
+        <h2>El Equipo</h2>
+        <p>
+          Somos un equipo apasionado por la narrativa interactiva.
+        </p>
+      </div>
+    </section>
 
-<section class="cards">
-  <div class="card">
-    <span class="material-icons">person</span>
-    <h3>Ariadna</h3>
-    <p>Diseño web y base de datos.</p>
-  </div>
+    <section class="cards scroll-anim">
+      <div class="card">
+        <span class="material-icons">palette</span>
+        <h3>Ariadna</h3>
+        <p>Diseño Web y Base de Datos.</p>
+      </div>
 
-  <div class="card">
-    <span class="material-icons">person</span>
-    <h3>Erik</h3>
-    <p>Programación y experiencia de usuario.</p>
-  </div>
+      <div class="card">
+        <span class="material-icons">code</span>
+        <h3>Erik</h3>
+        <p>Programación Backend y UX.</p>
+      </div>
 
-  <div class="card">
-    <span class="material-icons">person</span>
-    <h3>Fabian</h3>
-    <p>Programación y resolucion de errores.</p>
-  </div>
-</section>
+      <div class="card">
+        <span class="material-icons">bug_report</span>
+        <h3>Fabian</h3>
+        <p>Control de Calidad y Debugging.</p>
+      </div>
+    </section>
 
-<hr>
+    <section class="scroll-anim" style="background-color: #f1f5f9; text-align: center;">
+        <h2>Tráiler del Proyecto</h2>
+        <p>Un vistazo a lo que hemos construido.</p>
+        
+        <div style="max-width: 800px; margin: 2rem auto; aspect-ratio: 16/9;">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/" 
+            title="Tráiler Misión Final" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          </iframe>
+        </div>
+    </section>
+</main>
 
 <footer>
   <p>© 2026 Misión Final - Unidad creada por Ariadna, Erik y Fabian.</p>
   <div class="social-icons">
-    <span class="material-icons">public</span>
-    <span class="material-icons">photo_camera</span>
-    <span class="material-icons">thumb_up</span>
-    <span class="material-icons">music_note</span>
+    <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
   </div>
 </footer>
 

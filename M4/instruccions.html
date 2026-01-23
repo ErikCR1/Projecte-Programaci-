@@ -2,94 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Instrucciones | Misión final</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrucciones | Misión Final</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <header>
   <div class="logo-container">
-    <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
-    <h1>Misión final</h1>
+    <img src="img/logo.png" alt="Logo Misión Final" class="nav-logo-icon">
+    <h1>Misión Final</h1>
   </div>
   <nav>
-    <a href="index.html">Inici</a>
-    <a href="instruccions.html">Instrucciones</a>
-    <a href="historia.html">Història</a>
-    <a href="usuari.html">Usuari</a>
-    <a href="contacte.html">Contacte</a>
-    <a href="aboutus.html">About</a>
+    <a href="index.html">Inicio</a>
+    <a href="instruccions.html" class="active">Instrucciones</a>
+    <a href="historia.html">Historia</a>
+    <a href="usuari.html">Usuario</a>
+    <a href="contacte.html">Contacto</a>
+    <a href="aboutus.html">Nosotros</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Manual de operaciones</h2>
-    <p>
-      Para garantizar el éxito de la misión, es imperativo que comprendas las mecánicas de decisión 
-      y gestión de recursos. Cada elección que tomes se registra en el núcleo del sistema, 
-      alterando las variables de supervivencia de tus agentes. Lee detenidamente este manual 
-      antes de proceder al despliegue en territorio hostil.
-    </p>
-  </div>
-</section>
+<main>
+    <section class="hero" style="min-height: 40vh;">
+      <div class="hero-content">
+        <h2>Manual de Operaciones</h2>
+        <p>
+          Para garantizar el éxito, es imperativo que comprendas las mecánicas. 
+          Cada elección altera las variables de supervivencia de tus agentes.
+        </p>
+      </div>
+    </section>
 
-<section>
-  <h2>Interfaz del juego</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="img/captura1.jpg" alt="Captura 1" style="width:100%; border-radius:10px;">
-      <p>Pantalla principal de decisiones.</p>
-    </div>
+    <section class="scroll-anim">
+      <h2>Interfaz del sistema</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="img/image1.png" alt="Pantalla de decisiones" style="width:100%; border-radius:8px; margin-bottom: 1rem;">
+          <h3>Panel de Decisión</h3>
+          <p>Aquí se presentan las opciones disponibles en cada turno.</p>
+        </div>
 
-    <div class="card">
-      <img src="img/captura2.jpg" alt="Captura 2" style="width:100%; border-radius:10px;">
-      <p>Consecuencias de una elección importante.</p>
-    </div>
-  </div>
-</section>
-<hr>
-<section>
-  <h2>Mecánicas del juego</h2>
+        <div class="card">
+          <img src="img/image2.png" alt="Consecuencias" style="width:100%; border-radius:8px; margin-bottom: 1rem;">
+          <h3>Resultado</h3>
+          <p>Visualización inmediata de las consecuencias de tus actos.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="cards">
-    <div class="card">
-      <span class="material-icons">call_split</span>
-      <h3>Decisiones ramificadas</h3>
-      <p>
-        Cada elección abre o cierra caminos narrativos diferentes.
-      </p>
-    </div>
+    <section class="scroll-anim" style="background-color: #f8fafc;">
+      <h2>Mecánicas de Juego</h2>
+      <div class="cards">
+        <div class="card">
+          <span class="material-icons">call_split</span>
+          <h3>Ramificación</h3>
+          <p>La historia no es lineal. Un pequeño detalle puede cambiar el capítulo final completamente.</p>
+        </div>
 
-    <div class="card">
-      <span class="material-icons">favorite</span>
-      <h3>Relaciones</h3>
-      <p>
-        Tus acciones afectan la relación con otros personajes.
-      </p>
-    </div>
-
-    <div class="card">
-      <span class="material-icons">flag</span>
-      <h3>Finales múltiples</h3>
-      <p>
-        El juego cuenta con varios finales según tus decisiones.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <span class="material-icons">flag</span>
+          <h3>Finales Múltiples</h3>
+          <p>Existen más de 5 finales posibles por aventura. ¿Podrás desbloquear el final perfecto?</p>
+        </div>
+      </div>
+    </section>
+</main>
 
 <footer>
   <p>© 2026 Misión Final - Unidad creada por Ariadna, Erik y Fabian.</p>
   <div class="social-icons">
-    <span class="material-icons">public</span>
-    <span class="material-icons">photo_camera</span>
-    <span class="material-icons">thumb_up</span>
-    <span class="material-icons">music_note</span>
+    <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
   </div>
 </footer>
-
 </body>
 </html>
