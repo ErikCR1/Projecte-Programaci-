@@ -2,129 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Contacto | Misión final</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Misión Final</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <header>
   <div class="logo-container">
-    <img src="img/logo.png" alt="Logo Misión final" class="nav-logo-icon">
-    <h1>Misión final</h1>
+    <img src="img/logo.png" alt="Logo Misión Final" class="nav-logo-icon">
+    <h1>Misión Final</h1>
   </div>
   <nav>
-    <a href="index.html">Inici</a>
+    <a href="index.html">Inicio</a>
     <a href="instruccions.html">Instrucciones</a>
-    <a href="historia.html">Història</a>
-    <a href="usuari.html">Usuari</a>
-    <a href="contacte.html">Contacte</a>
-    <a href="aboutus.html">About</a>
+    <a href="historia.html">Historia</a>
+    <a href="usuari.html">Usuario</a>
+    <a href="contacte.html" class="active">Contacto</a>
+    <a href="aboutus.html">Nosotros</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Contacto</h2>
-    <p>
-      ¿Tienes dudas, sugerencias o quieres colaborar con nosotros?
-      Ponte en contacto a través de los siguientes medios.
-    </p>
-  </div>
-</section>
+<main>
+    <section class="hero" style="min-height: 40vh;">
+      <div class="hero-content">
+        <h2>Centro de Comunicaciones</h2>
+        <p>
+          ¿Dudas sobre el protocolo? ¿Sugerencias para futuras misiones? 
+          Establece contacto seguro a través de los siguientes canales.
+        </p>
+      </div>
+    </section>
 
-<section class="cards">
+    <section class="scroll-anim">
+        <div class="cards">
+            <div class="card">
+                <span class="material-icons">email</span>
+                <h3>Correo Electrónico</h3>
+                <p><a href="mailto:contacto@misionfinal.com" style="color:var(--primary);">contacto@misionfinal.com</a></p>
+            </div>
 
-  <div class="card">
-    <span class="material-icons">email</span>
-    <h3>Email</h3>
-    <p>contacto@misionfinal.com</p>
-  </div>
+            <div class="card">
+                <span class="material-icons">call</span>
+                <h3>Línea Directa</h3>
+                <p><a href="tel:+34931234567" style="color:var(--primary);">+34 931 23 45 67</a></p>
+            </div>
 
-  <div class="card">
-    <span class="material-icons">call</span>
-    <h3>Teléfono</h3>
-    <p>
-      <a href="tel:+34931234567" style="color:var(--accent); text-decoration:none;">
-        +34 931 23 45 67
-      </a>
-    </p>
-  </div>
+            <div class="card">
+                <span class="material-icons">location_on</span>
+                <h3>Base Operativa</h3>
+                <p>Plaza Pau, S/N - Cornellà de Llobregat, Barcelona</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <span class="material-icons">location_on</span>
-    <h3>Dirección</h3>
-    <p>PLAZA PAU, S/N - BL 3 P. 2 PTA<br>08940 CORNELLA DE LLOBREGAT</p>
-  </div>
+    <section class="scroll-anim">
+        <div class="section-box" style="width: 100%;">
+            <h2>Localización</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d748.7594995935216!2d2.085022969601314!3d41.351527798206504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIxJzA1LjUiTiAywrAwNScwOC40IkU!5e0!3m2!1ses!2ses!4v1768831273116!5m2!1ses!2ses"
+              width="100%"
+              height="350"
+              style="border-radius:15px; border:0;">
+            </iframe>
+        </div>
+    </section>
 
-  <div class="section-box">
-    <h2>¿Dónde estamos?</h2>
+    <section class="scroll-anim" style="background-color: #f1f5f9;">
+        <h2>Formulario de Solicitud</h2>
+        <form action="#" method="post">
+            <p style="font-size: 0.9rem; color: #666;">Campos marcados con * son obligatorios.</p>
+            
+            <label for="nombre">Identidad:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellidos*" required pattern="[A-Za-zÀ-ÿ\s]{3,}" title="Mínimo 3 letras">
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d748.7594995935216!2d2.085022969601314!3d41.351527798206504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDIxJzA1LjUiTiAywrAwNScwOC40IkU!5e0!3m2!1ses!2ses!4v1768831273116!5m2!1ses!2ses"
-      width="100%"
-      height="350"
-      style="border-radius:15px; border:0;">
-    </iframe>
-  </div>
-</section>
-<hr>
-<section>
-  <div class="section-box">
-    <h2>Formulario de contacto</h2>
+            <label for="telefono">Frecuencia (Teléfono):</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="600000000" pattern="[0-9]{9}" title="9 dígitos sin espacios">
 
-    <form>
-      
-      <p>Los puntos con * son obligatorios.</p>
-      
-      <input
-        type="text"
-        placeholder="Nombre y Apellidos*"
-        required
-        pattern="[A-Za-zÀ-ÿ\s]{3,}"
-        title="Introduce un nombre válido (mínimo 3 letras)">
+            <label for="email">Enlace (Email):</label>
+            <input type="email" id="email" name="email" placeholder="agente@ejemplo.com*" required>
 
-      <input
-        type="tel"
-        placeholder="Teléfono"
-        pattern="[0-9]{9}"
-        title="Introduce un teléfono de 9 dígitos">
+            <label for="mensaje">Informe:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Detalle su solicitud aquí...*" required pattern=".{10,}" title="Mínimo 10 caracteres"></textarea>
 
-      <input
-        type="email"
-        placeholder="Correo electrónico*"
-        required>
-
-      <textarea
-        rows="4"
-        placeholder="Escribe tu mensaje*"
-        required
-        pattern=".{10,}"
-        title="El mensaje debe tener al menos 10 caracteres"></textarea>
-
-      <input type="submit" value="Enviar solicitud"
-        style="
-          background: #4053ab24;
-          color: #000000;
-          font-weight: 700;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          padding: 0.8rem;
-        ">
-    </form>
-
-  </div>
-</section>
+            <button type="submit" class="button" style="width: 100%; border: none; background: var(--primary); color: white;">ENVIAR TRANSMISIÓN</button>
+        </form>
+    </section>
+</main>
 
 <footer>
   <p>© 2026 Misión Final - Unidad creada por Ariadna, Erik y Fabian.</p>
   <div class="social-icons">
-    <span class="material-icons">public</span>
-    <span class="material-icons">photo_camera</span>
-    <span class="material-icons">thumb_up</span>
-    <span class="material-icons">music_note</span>
+    <a href="#" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
   </div>
 </footer>
 
